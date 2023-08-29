@@ -3,23 +3,23 @@ import React, { useState } from 'react';
 const Tabs = ({ tabs }) => {
   const [activeTab, setActiveTab] = useState(0);
 
-  const handleTabClick = (index) => {
-    setActiveTab(index);
+  const handleTabClick = (content) => {
+    setActiveTab(content);
   };
 
   return (
-    <div className="tabs-container">
+    <div >
       <ul>
-        {tabs.map((tab, index) => (
+        {tabs.map((tab, content) => (
            <li
-              key={index}
-              className={`tab-item ${index === activeTab ? 'active' : ''}`}
-              onClick={() => handleTabClick(index)}
+              key={value}
+              className={`tab-item ${value === activeTab ? 'active' : ''}`}
+              onClick={() => handleTabClick(value.content)}
             >
               </li>
         ))}        
       </ul >
-      {setActiveTab && <p>This is the content for{activeTab.content}</p>}
+      {setActiveTab && <p>This is the content for{activeTab}</p>}
     </div >
   );
 };
